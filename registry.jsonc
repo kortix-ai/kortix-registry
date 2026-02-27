@@ -305,48 +305,58 @@
 			"name": "web-search",
 			"type": "ocx:tool",
 			"description": "Web search via Tavily API with batch queries, topic filtering, and AI answers",
-			"files": ["tool/web-search.ts"],
+			"files": ["tool/web-search.ts", "tool/tests/web-search.test.ts"],
 			"npmDevDependencies": ["@anthropic-ai/sdk@0.52.0", "@tavily/core@0.0.7"]
 		},
 		{
 			"name": "scrape-webpage",
 			"type": "ocx:tool",
 			"description": "Fetch and extract web content via Firecrawl — HTML to clean markdown",
-			"files": ["tool/scrape-webpage.ts"],
+			"files": ["tool/scrape-webpage.ts", "tool/tests/scrape-webpage.test.ts"],
 			"npmDevDependencies": ["@mendable/firecrawl-js@1.25.2"]
 		},
 		{
 			"name": "image-gen",
 			"type": "ocx:tool",
 			"description": "Generate, edit, upscale, and remove backgrounds from images via Replicate AI models",
-			"files": ["tool/image-gen.ts"],
+			"files": ["tool/image-gen.ts", "tool/tests/image-gen.test.ts"],
 			"npmDevDependencies": ["replicate@1.0.1"]
 		},
 		{
 			"name": "image-search",
 			"type": "ocx:tool",
 			"description": "Search Google Images via Serper API with optional AI-generated descriptions",
-			"files": ["tool/image-search.ts"],
+			"files": ["tool/image-search.ts", "tool/tests/image-search.test.ts"],
 			"npmDevDependencies": ["replicate@1.0.1"]
 		},
 		{
 			"name": "video-gen",
 			"type": "ocx:tool",
 			"description": "Generate videos from text/images via ByteDance Seedance 1.5 Pro on Replicate",
-			"files": ["tool/video-gen.ts"],
+			"files": ["tool/video-gen.ts", "tool/tests/video-gen.test.ts"],
 			"npmDevDependencies": ["replicate@1.0.1"]
 		},
 		{
 			"name": "presentation-gen",
 			"type": "ocx:tool",
 			"description": "Create, validate, preview, and export HTML presentation slides (1920x1080)",
-			"files": ["tool/presentation-gen.ts"]
+			"files": [
+				"tool/presentation-gen.ts",
+				"tool/scripts/.python-version",
+				"tool/scripts/pyproject.toml",
+				"tool/scripts/uv.lock",
+				"tool/scripts/convert_pdf.py",
+				"tool/scripts/convert_pptx.py",
+				"tool/scripts/validate_slide.py",
+				"tool/tests/presentation-gen.test.ts",
+				"tool/tests/e2e-presentation-fix.ts"
+			]
 		},
 		{
 			"name": "show",
 			"type": "ocx:tool",
 			"description": "Show outputs and attachments to users — images, files, URLs, text, code, videos, audio",
-			"files": ["tool/show.ts"]
+			"files": ["tool/show.ts", "tool/tests/show.test.ts"]
 		},
 		{
 			"name": "cron-triggers",
