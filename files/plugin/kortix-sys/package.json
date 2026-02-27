@@ -1,0 +1,41 @@
+{
+  "name": "kortix-sys-oc-plugin",
+  "version": "1.0.1",
+  "description": "Kortix system plugin for OpenCode — long-term memory, session management, and context persistence. The single plugin that makes Kortix work.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src/",
+    "skills/"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "bun x tsc --noEmit"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.2.11",
+    "@opencode-ai/sdk": "^1.2.11"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.7.0"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "kortix",
+    "memory",
+    "session",
+    "long-term-memory",
+    "compaction",
+    "context"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anomalyco/heyagi"
+  }
+}

@@ -1,0 +1,569 @@
+{
+	"$schema": "https://ocx.kdco.dev/schemas/registry.json",
+
+	// Kortix Registry — AI agent capabilities for the Kortix sandbox platform.
+	// Skills, tools, plugins, agents, and commands for building AI-powered workflows.
+
+	"name": "Kortix",
+	"namespace": "kortix",
+	"version": "1.0.0",
+	"author": "Kortix Team",
+	"opencode": "1.1.0",
+	"ocx": "1.0.16",
+
+	"components": [
+		// ============================================================================
+		// SKILLS — Knowledge modules that teach agents how to perform specific tasks
+		// ============================================================================
+
+		{
+			"name": "deep-research",
+			"type": "ocx:skill",
+			"description": "Thorough, scientific, truth-seeking research with cited reports",
+			"files": ["skills/deep-research/SKILL.md"]
+		},
+		{
+			"name": "agent-browser",
+			"type": "ocx:skill",
+			"description": "Browser automation — navigate pages, fill forms, click buttons, take screenshots, extract data",
+			"files": [
+				"skills/agent-browser/SKILL.md",
+				"skills/agent-browser/references/authentication.md",
+				"skills/agent-browser/references/commands.md",
+				"skills/agent-browser/references/profiling.md",
+				"skills/agent-browser/references/proxy-support.md",
+				"skills/agent-browser/references/session-management.md",
+				"skills/agent-browser/references/snapshot-refs.md",
+				"skills/agent-browser/references/video-recording.md",
+				"skills/agent-browser/templates/authenticated-session.sh",
+				"skills/agent-browser/templates/capture-workflow.sh",
+				"skills/agent-browser/templates/form-automation.sh"
+			]
+		},
+		{
+			"name": "docx",
+			"type": "ocx:skill",
+			"description": "Create, read, edit, and manipulate Word documents (.docx) with formatting, TOC, tracked changes",
+			"files": [
+				"skills/docx/SKILL.md",
+				"skills/docx/scripts/__init__.py",
+				"skills/docx/scripts/accept_changes.py",
+				"skills/docx/scripts/comment.py",
+				"skills/docx/scripts/render_docx.py",
+				"skills/docx/scripts/office/pack.py",
+				"skills/docx/scripts/office/soffice.py",
+				"skills/docx/scripts/office/unpack.py",
+				"skills/docx/scripts/office/validate.py",
+				"skills/docx/scripts/office/helpers/__init__.py",
+				"skills/docx/scripts/office/helpers/merge_runs.py",
+				"skills/docx/scripts/office/helpers/simplify_redlines.py",
+				"skills/docx/scripts/office/validators/__init__.py",
+				"skills/docx/scripts/office/validators/base.py",
+				"skills/docx/scripts/office/validators/docx.py",
+				"skills/docx/scripts/office/validators/pptx.py",
+				"skills/docx/scripts/office/validators/redlining.py",
+				"skills/docx/scripts/templates/comments.xml",
+				"skills/docx/scripts/templates/commentsExtended.xml",
+				"skills/docx/scripts/templates/commentsExtensible.xml",
+				"skills/docx/scripts/templates/commentsIds.xml",
+				"skills/docx/scripts/templates/people.xml"
+			]
+		},
+		{
+			"name": "xlsx",
+			"type": "ocx:skill",
+			"description": "Spreadsheet operations — open, read, edit, create .xlsx/.xlsm/.csv/.tsv with formulas, charts, formatting",
+			"files": [
+				"skills/xlsx/SKILL.md",
+				"skills/xlsx/LICENSE.txt",
+				"skills/xlsx/scripts/recalc.py",
+				"skills/xlsx/scripts/office/pack.py",
+				"skills/xlsx/scripts/office/soffice.py",
+				"skills/xlsx/scripts/office/unpack.py",
+				"skills/xlsx/scripts/office/validate.py",
+				"skills/xlsx/scripts/office/helpers/__init__.py",
+				"skills/xlsx/scripts/office/helpers/merge_runs.py",
+				"skills/xlsx/scripts/office/helpers/simplify_redlines.py",
+				"skills/xlsx/scripts/office/validators/__init__.py",
+				"skills/xlsx/scripts/office/validators/base.py",
+				"skills/xlsx/scripts/office/validators/docx.py",
+				"skills/xlsx/scripts/office/validators/pptx.py",
+				"skills/xlsx/scripts/office/validators/redlining.py",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+				"skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+				"skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+				"skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+				"skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+				"skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+				"skills/xlsx/scripts/office/schemas/mce/mc.xsd",
+				"skills/xlsx/scripts/office/schemas/microsoft/wml-2010.xsd",
+				"skills/xlsx/scripts/office/schemas/microsoft/wml-2012.xsd",
+				"skills/xlsx/scripts/office/schemas/microsoft/wml-2018.xsd",
+				"skills/xlsx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+				"skills/xlsx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+				"skills/xlsx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+				"skills/xlsx/scripts/office/schemas/microsoft/wml-symex-2015.xsd"
+			]
+		},
+		{
+			"name": "pdf",
+			"type": "ocx:skill",
+			"description": "All PDF operations — read, merge, split, rotate, watermark, create, fill forms, OCR, extract images",
+			"files": [
+				"skills/pdf/SKILL.md",
+				"skills/pdf/forms.md",
+				"skills/pdf/reference.md",
+				"skills/pdf/scripts/check_bounding_boxes.py",
+				"skills/pdf/scripts/check_fillable_fields.py",
+				"skills/pdf/scripts/convert_pdf_to_images.py",
+				"skills/pdf/scripts/create_validation_image.py",
+				"skills/pdf/scripts/extract_form_field_info.py",
+				"skills/pdf/scripts/extract_form_structure.py",
+				"skills/pdf/scripts/fill_fillable_fields.py",
+				"skills/pdf/scripts/fill_pdf_form_with_annotations.py"
+			]
+		},
+		{
+			"name": "presentations",
+			"type": "ocx:skill",
+			"description": "Create, edit, and export slide deck presentations (HTML 1920x1080) with PDF/PPTX export",
+			"files": [
+				"skills/presentations/SKILL.md",
+				"skills/presentations/serve.ts",
+				"skills/presentations/viewer.html"
+			],
+			"dependencies": ["presentation-gen"]
+		},
+		{
+			"name": "remotion",
+			"type": "ocx:skill",
+			"description": "Video creation in React — compositions, animations, audio, captions, 3D, transitions, charts, GIFs, Lottie",
+			"files": [
+				"skills/remotion/SKILL.md",
+				"skills/remotion/rules/3d.md",
+				"skills/remotion/rules/animations.md",
+				"skills/remotion/rules/assets.md",
+				"skills/remotion/rules/audio.md",
+				"skills/remotion/rules/audio-visualization.md",
+				"skills/remotion/rules/calculate-metadata.md",
+				"skills/remotion/rules/can-decode.md",
+				"skills/remotion/rules/charts.md",
+				"skills/remotion/rules/compositions.md",
+				"skills/remotion/rules/display-captions.md",
+				"skills/remotion/rules/extract-frames.md",
+				"skills/remotion/rules/ffmpeg.md",
+				"skills/remotion/rules/fonts.md",
+				"skills/remotion/rules/get-audio-duration.md",
+				"skills/remotion/rules/get-video-dimensions.md",
+				"skills/remotion/rules/get-video-duration.md",
+				"skills/remotion/rules/gifs.md",
+				"skills/remotion/rules/images.md",
+				"skills/remotion/rules/import-srt-captions.md",
+				"skills/remotion/rules/light-leaks.md",
+				"skills/remotion/rules/lottie.md",
+				"skills/remotion/rules/maps.md",
+				"skills/remotion/rules/measuring-dom-nodes.md",
+				"skills/remotion/rules/measuring-text.md",
+				"skills/remotion/rules/parameters.md",
+				"skills/remotion/rules/sequencing.md",
+				"skills/remotion/rules/subtitles.md",
+				"skills/remotion/rules/tailwind.md",
+				"skills/remotion/rules/text-animations.md",
+				"skills/remotion/rules/timing.md",
+				"skills/remotion/rules/transcribe-captions.md",
+				"skills/remotion/rules/transitions.md",
+				"skills/remotion/rules/transparent-videos.md",
+				"skills/remotion/rules/trimming.md",
+				"skills/remotion/rules/videos.md"
+			]
+		},
+		{
+			"name": "legal-writer",
+			"type": "ocx:skill",
+			"description": "Legal document drafting — contracts, memos, briefs, ToS, privacy policies with Bluebook citations",
+			"files": [
+				"skills/legal-writer/SKILL.md",
+				"skills/legal-writer/references/bluebook.md",
+				"skills/legal-writer/references/document-types.md",
+				"skills/legal-writer/scripts/courtlistener.py",
+				"skills/legal-writer/scripts/ecfr_lookup.py",
+				"skills/legal-writer/scripts/verify-legal.py"
+			]
+		},
+		{
+			"name": "paper-creator",
+			"type": "ocx:skill",
+			"description": "Scientific paper writing in LaTeX — full pipeline from structure to compiled PDF with citations",
+			"files": [
+				"skills/paper-creator/SKILL.md",
+				"skills/paper-creator/assets/template.tex",
+				"skills/paper-creator/scripts/compile.sh",
+				"skills/paper-creator/scripts/openalex_to_bibtex.py",
+				"skills/paper-creator/scripts/verify.sh"
+			],
+			"dependencies": ["openalex-paper-search"]
+		},
+		{
+			"name": "openalex-paper-search",
+			"type": "ocx:skill",
+			"description": "Academic paper search powered by OpenAlex — 240M+ scholarly works, citations, author publications",
+			"files": ["skills/openalex-paper-search/SKILL.md"]
+		},
+		{
+			"name": "logo-creator",
+			"type": "ocx:skill",
+			"description": "Professional logo creation — research, AI symbol generation, Google Fonts typography composition",
+			"files": [
+				"skills/logo-creator/SKILL.md",
+				"skills/logo-creator/references/prompt-patterns.md",
+				"skills/logo-creator/scripts/compose_logo.py",
+				"skills/logo-creator/scripts/create_logo_sheet.py",
+				"skills/logo-creator/scripts/remove_bg.py"
+			],
+			"dependencies": ["image-gen"]
+		},
+		{
+			"name": "email",
+			"type": "ocx:skill",
+			"description": "Send and receive email via IMAP/SMTP using curl — works with any email provider",
+			"files": ["skills/email/SKILL.md"]
+		},
+		{
+			"name": "elevenlabs",
+			"type": "ocx:skill",
+			"description": "ElevenLabs audio — text-to-speech, voice cloning, and sound effects generation",
+			"files": [
+				"skills/elevenlabs/SKILL.md",
+				"skills/elevenlabs/scripts/tts.py"
+			]
+		},
+		{
+			"name": "domain-research",
+			"type": "ocx:skill",
+			"description": "Domain research and availability checking — RDAP, WHOIS, expiry dates, nameservers",
+			"files": [
+				"skills/domain-research/SKILL.md",
+				"skills/domain-research/scripts/domain-lookup.py"
+			]
+		},
+		{
+			"name": "fullstack-vite-convex",
+			"type": "ocx:skill",
+			"description": "Full-stack web development with Convex + Vite React — TDD-driven, strict TypeScript",
+			"files": ["skills/fullstack-vite-convex/SKILL.md"]
+		},
+		{
+			"name": "kortix-system",
+			"type": "ocx:skill",
+			"description": "Complete Kortix sandbox system reference — services, filesystem, env vars, deployments, cron",
+			"files": ["skills/kortix-system/SKILL.md"]
+		},
+		{
+			"name": "opencode-reference",
+			"type": "ocx:skill",
+			"description": "In-depth reference for OpenCode framework — agents, skills, tools, commands, sessions, API",
+			"files": ["skills/opencode/SKILL.md"]
+		},
+		{
+			"name": "woa",
+			"type": "ocx:skill",
+			"description": "Wisdom of Agents — internal agent forum for sharing solutions to problems",
+			"files": ["skills/woa/SKILL.md"],
+			"dependencies": ["woa-find", "woa-create"]
+		},
+
+		// ============================================================================
+		// TOOLS — Custom tool implementations for agent capabilities
+		// ============================================================================
+
+		{
+			"name": "web-search",
+			"type": "ocx:tool",
+			"description": "Web search via Tavily API with batch queries, topic filtering, and AI answers",
+			"files": ["tool/web-search.ts"],
+			"npmDevDependencies": ["@anthropic-ai/sdk@0.52.0", "@tavily/core@0.0.7"]
+		},
+		{
+			"name": "scrape-webpage",
+			"type": "ocx:tool",
+			"description": "Fetch and extract web content via Firecrawl — HTML to clean markdown",
+			"files": ["tool/scrape-webpage.ts"],
+			"npmDevDependencies": ["@mendable/firecrawl-js@1.25.2"]
+		},
+		{
+			"name": "image-gen",
+			"type": "ocx:tool",
+			"description": "Generate, edit, upscale, and remove backgrounds from images via Replicate AI models",
+			"files": ["tool/image-gen.ts"],
+			"npmDevDependencies": ["replicate@1.0.1"]
+		},
+		{
+			"name": "image-search",
+			"type": "ocx:tool",
+			"description": "Search Google Images via Serper API with optional AI-generated descriptions",
+			"files": ["tool/image-search.ts"],
+			"npmDevDependencies": ["replicate@1.0.1"]
+		},
+		{
+			"name": "video-gen",
+			"type": "ocx:tool",
+			"description": "Generate videos from text/images via ByteDance Seedance 1.5 Pro on Replicate",
+			"files": ["tool/video-gen.ts"],
+			"npmDevDependencies": ["replicate@1.0.1"]
+		},
+		{
+			"name": "presentation-gen",
+			"type": "ocx:tool",
+			"description": "Create, validate, preview, and export HTML presentation slides (1920x1080)",
+			"files": ["tool/presentation-gen.ts"]
+		},
+		{
+			"name": "show",
+			"type": "ocx:tool",
+			"description": "Show outputs and attachments to users — images, files, URLs, text, code, videos, audio",
+			"files": ["tool/show.ts"]
+		},
+		{
+			"name": "cron-triggers",
+			"type": "ocx:tool",
+			"description": "Manage scheduled cron triggers on Kortix — create, list, pause, resume, run",
+			"files": ["tool/cron-triggers.ts"]
+		},
+		{
+			"name": "woa-find",
+			"type": "ocx:tool",
+			"description": "Search the Wisdom of Agents forum for existing solutions",
+			"files": ["tool/woa-find.ts"]
+		},
+		{
+			"name": "woa-create",
+			"type": "ocx:tool",
+			"description": "Post to the Wisdom of Agents forum — new questions or replies",
+			"files": ["tool/woa-create.ts"]
+		},
+		{
+			"name": "integration-search",
+			"type": "ocx:tool",
+			"description": "Search available third-party OAuth apps for connection",
+			"files": ["tool/integration-search.ts"]
+		},
+		{
+			"name": "integration-connect",
+			"type": "ocx:tool",
+			"description": "Connect a third-party app via OAuth — returns dashboard URL for authorization",
+			"files": ["tool/integration-connect.ts"]
+		},
+		{
+			"name": "integration-list",
+			"type": "ocx:tool",
+			"description": "List connected OAuth integrations available in the sandbox",
+			"files": ["tool/integration-list.ts"]
+		},
+		{
+			"name": "integration-actions",
+			"type": "ocx:tool",
+			"description": "List available Pipedream actions for a connected integration app",
+			"files": ["tool/integration-actions.ts"]
+		},
+		{
+			"name": "integration-run",
+			"type": "ocx:tool",
+			"description": "Execute a Pipedream action with structured props for a connected app",
+			"files": ["tool/integration-run.ts"]
+		},
+		{
+			"name": "integration-exec",
+			"type": "ocx:tool",
+			"description": "Execute Node.js code calling authenticated third-party APIs via proxyFetch",
+			"files": ["tool/integration-exec.ts"]
+		},
+		{
+			"name": "integration-request",
+			"type": "ocx:tool",
+			"description": "Make authenticated HTTP requests to third-party APIs on behalf of the user",
+			"files": ["tool/integration-request.ts"]
+		},
+		{
+			"name": "kortix-primitives",
+			"type": "ocx:tool",
+			"description": "Shared utility library — environment variable resolution for Kortix sandbox",
+			"files": ["tool/lib/get-env.ts"]
+		},
+
+		// ============================================================================
+		// PLUGINS — TypeScript plugins that extend OpenCode functionality
+		// ============================================================================
+
+		{
+			"name": "kortix-memory",
+			"type": "ocx:plugin",
+			"description": "Long-term memory with episodic/semantic/procedural consolidation and hybrid BM25+vector search",
+			"files": [
+				"plugin/kortix-sys/src/index.ts",
+				"plugin/kortix-sys/src/extract.ts",
+				"plugin/kortix-sys/src/types.ts",
+				"plugin/kortix-sys/src/llm.ts",
+				"plugin/kortix-sys/src/search.ts",
+				"plugin/kortix-sys/src/db.ts",
+				"plugin/kortix-sys/src/enrich.ts",
+				"plugin/kortix-sys/src/consolidate.ts",
+				"plugin/kortix-sys/src/context.ts",
+				"plugin/kortix-sys/src/session.ts",
+				"plugin/kortix-sys/src/lss.ts",
+				"plugin/kortix-sys/skills/session-search/SKILL.md",
+				"plugin/kortix-sys/skills/memory-context-management/SKILL.md",
+				"plugin/kortix-sys/package.json",
+				"plugin/kortix-sys/tsconfig.json"
+			]
+		},
+		{
+			"name": "kortix-tunnel",
+			"type": "ocx:plugin",
+			"description": "Tunnel tools for interacting with the user's local machine — filesystem, shell, screen, clipboard",
+			"files": [
+				"plugin/kortix-tunnel/index.ts",
+				"plugin/kortix-tunnel/rpc.ts",
+				"plugin/kortix-tunnel/tunnel.ts",
+				"plugin/kortix-tunnel/tunnel-desktop.ts"
+			]
+		},
+
+		// ============================================================================
+		// AGENTS — AI personas with specialized capabilities
+		// ============================================================================
+
+		{
+			"name": "kortix-agent",
+			"type": "ocx:agent",
+			"description": "Autonomous general-purpose agent — plans, explores, builds, handles all tasks directly",
+			"files": ["agent/kortix.md"]
+		},
+
+		// ============================================================================
+		// COMMANDS — User-invokable slash commands
+		// ============================================================================
+
+		{
+			"name": "onboarding",
+			"type": "ocx:command",
+			"description": "First-run onboarding — researches user, builds profile, connects accounts, seeds memory",
+			"files": ["command/onboarding.md"]
+		},
+
+		// ============================================================================
+		// BUNDLES — Pre-configured collections for common use cases
+		// ============================================================================
+
+		{
+			"name": "sandbox",
+			"type": "ocx:bundle",
+			"description": "Full Kortix sandbox experience — all skills, tools, plugins, and the default agent",
+			"files": [],
+			"dependencies": [
+				"kortix-agent",
+				"onboarding",
+				"kortix-memory",
+				"kortix-tunnel",
+				"research",
+				"documents",
+				"media",
+				"integrations",
+				"web-search",
+				"scrape-webpage",
+				"show",
+				"cron-triggers",
+				"kortix-system",
+				"email",
+				"domain-research",
+				"fullstack-vite-convex",
+				"agent-browser",
+				"remotion",
+				"opencode-reference",
+				"woa",
+				"woa-find",
+				"woa-create",
+				"kortix-primitives"
+			]
+		},
+		{
+			"name": "research",
+			"type": "ocx:bundle",
+			"description": "Research capabilities — deep research, academic papers, web search",
+			"files": [],
+			"dependencies": [
+				"deep-research",
+				"openalex-paper-search",
+				"paper-creator",
+				"web-search",
+				"scrape-webpage"
+			]
+		},
+		{
+			"name": "documents",
+			"type": "ocx:bundle",
+			"description": "Document creation — Word, Excel, PDF, presentations, legal docs",
+			"files": [],
+			"dependencies": [
+				"docx",
+				"xlsx",
+				"pdf",
+				"presentations",
+				"presentation-gen",
+				"legal-writer"
+			]
+		},
+		{
+			"name": "media",
+			"type": "ocx:bundle",
+			"description": "Media generation — images, videos, logos, audio, presentations",
+			"files": [],
+			"dependencies": [
+				"image-gen",
+				"image-search",
+				"video-gen",
+				"logo-creator",
+				"elevenlabs"
+			]
+		},
+		{
+			"name": "integrations",
+			"type": "ocx:bundle",
+			"description": "Third-party OAuth integrations — search, connect, list, execute actions",
+			"files": [],
+			"dependencies": [
+				"integration-search",
+				"integration-connect",
+				"integration-list",
+				"integration-actions",
+				"integration-run",
+				"integration-exec",
+				"integration-request"
+			]
+		}
+	]
+}

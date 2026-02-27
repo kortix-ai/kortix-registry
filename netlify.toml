@@ -1,0 +1,3 @@
+[build]
+  command = "bunx ocx build . --out dist"
+  publish = "dist"
