@@ -20,7 +20,7 @@ ocx add kortix/sandbox
 | media | Images, videos, logos, audio generation | `ocx add kortix/media` |
 | integrations | Third-party OAuth integrations | `ocx add kortix/integrations` |
 
-## Skills (18)
+## Skills (19)
 
 | Name | Description | Command |
 |------|-------------|---------|
@@ -36,6 +36,7 @@ ocx add kortix/sandbox
 | openalex-paper-search | Academic paper search (240M+ works) | `ocx add kortix/openalex-paper-search` |
 | logo-creator | Professional logo creation with AI | `ocx add kortix/logo-creator` |
 | email | Send/receive email via IMAP/SMTP | `ocx add kortix/email` |
+| hermes-tweet | Hermes Agent X/Twitter workflows with gated reads and actions | `ocx add kortix/hermes-tweet` |
 | elevenlabs | Text-to-speech, voice cloning, sound effects | `ocx add kortix/elevenlabs` |
 | domain-research | Domain availability checking via RDAP/WHOIS | `ocx add kortix/domain-research` |
 | fullstack-vite-convex | Full-stack web dev with Convex + Vite React | `ocx add kortix/fullstack-vite-convex` |

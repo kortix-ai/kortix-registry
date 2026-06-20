@@ -1,5 +1,5 @@
 {
-	"$schema": "https://ocx.kdco.dev/schemas/registry.json",
+	"$schema": "https://ocx.kdco.dev/schemas/v2/registry.json",
 
 	// Kortix Registry — AI agent capabilities for the Kortix sandbox platform.
 	// Skills, tools, plugins, agents, and commands for building AI-powered workflows.
@@ -18,13 +18,13 @@
 
 		{
 			"name": "deep-research",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Thorough, scientific, truth-seeking research with cited reports",
 			"files": ["skills/deep-research/SKILL.md"]
 		},
 		{
 			"name": "agent-browser",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Browser automation — navigate pages, fill forms, click buttons, take screenshots, extract data",
 			"files": [
 				"skills/agent-browser/SKILL.md",
@@ -42,7 +42,7 @@
 		},
 		{
 			"name": "docx",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Create, read, edit, and manipulate Word documents (.docx) with formatting, TOC, tracked changes",
 			"files": [
 				"skills/docx/SKILL.md",
@@ -71,7 +71,7 @@
 		},
 		{
 			"name": "xlsx",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Spreadsheet operations — open, read, edit, create .xlsx/.xlsm/.csv/.tsv with formulas, charts, formatting",
 			"files": [
 				"skills/xlsx/SKILL.md",
@@ -132,7 +132,7 @@
 		},
 		{
 			"name": "pdf",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "All PDF operations — read, merge, split, rotate, watermark, create, fill forms, OCR, extract images",
 			"files": [
 				"skills/pdf/SKILL.md",
@@ -150,7 +150,7 @@
 		},
 		{
 			"name": "presentations",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Create, edit, and export slide deck presentations (HTML 1920x1080) with PDF/PPTX export",
 			"files": [
 				"skills/presentations/SKILL.md",
@@ -161,7 +161,7 @@
 		},
 		{
 			"name": "remotion",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Video creation in React — compositions, animations, audio, captions, 3D, transitions, charts, GIFs, Lottie",
 			"files": [
 				"skills/remotion/SKILL.md",
@@ -204,7 +204,7 @@
 		},
 		{
 			"name": "legal-writer",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Legal document drafting — contracts, memos, briefs, ToS, privacy policies with Bluebook citations",
 			"files": [
 				"skills/legal-writer/SKILL.md",
@@ -217,7 +217,7 @@
 		},
 		{
 			"name": "paper-creator",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Scientific paper writing in LaTeX — full pipeline from structure to compiled PDF with citations",
 			"files": [
 				"skills/paper-creator/SKILL.md",
@@ -230,13 +230,13 @@
 		},
 		{
 			"name": "openalex-paper-search",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Academic paper search powered by OpenAlex — 240M+ scholarly works, citations, author publications",
 			"files": ["skills/openalex-paper-search/SKILL.md"]
 		},
 		{
 			"name": "logo-creator",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Professional logo creation — research, AI symbol generation, Google Fonts typography composition",
 			"files": [
 				"skills/logo-creator/SKILL.md",
@@ -249,13 +249,19 @@
 		},
 		{
 			"name": "email",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Send and receive email via IMAP/SMTP using curl — works with any email provider",
 			"files": ["skills/email/SKILL.md"]
 		},
 		{
+			"name": "hermes-tweet",
+			"type": "skill",
+			"description": "Hermes Agent X/Twitter workflows with gated reads and actions through Hermes Tweet",
+			"files": ["skills/hermes-tweet/SKILL.md"]
+		},
+		{
 			"name": "elevenlabs",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "ElevenLabs audio — text-to-speech, voice cloning, and sound effects generation",
 			"files": [
 				"skills/elevenlabs/SKILL.md",
@@ -264,7 +270,7 @@
 		},
 		{
 			"name": "domain-research",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Domain research and availability checking — RDAP, WHOIS, expiry dates, nameservers",
 			"files": [
 				"skills/domain-research/SKILL.md",
@@ -273,25 +279,25 @@
 		},
 		{
 			"name": "fullstack-vite-convex",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Full-stack web development with Convex + Vite React — TDD-driven, strict TypeScript",
 			"files": ["skills/fullstack-vite-convex/SKILL.md"]
 		},
 		{
 			"name": "kortix-system",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Complete Kortix sandbox system reference — services, filesystem, env vars, deployments, cron",
 			"files": ["skills/kortix-system/SKILL.md"]
 		},
 		{
 			"name": "opencode-reference",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "In-depth reference for OpenCode framework — agents, skills, tools, commands, sessions, API",
 			"files": ["skills/opencode/SKILL.md"]
 		},
 		{
 			"name": "woa",
-			"type": "ocx:skill",
+			"type": "skill",
 			"description": "Wisdom of Agents — internal agent forum for sharing solutions to problems",
 			"files": ["skills/woa/SKILL.md"],
 			"dependencies": ["woa-find", "woa-create"]
@@ -303,42 +309,42 @@
 
 		{
 			"name": "web-search",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Web search via Tavily API with batch queries, topic filtering, and AI answers",
 			"files": ["tool/web-search.ts", "tool/tests/web-search.test.ts"],
 			"npmDevDependencies": ["@anthropic-ai/sdk@0.52.0", "@tavily/core@0.0.7"]
 		},
 		{
 			"name": "scrape-webpage",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Fetch and extract web content via Firecrawl — HTML to clean markdown",
 			"files": ["tool/scrape-webpage.ts", "tool/tests/scrape-webpage.test.ts"],
 			"npmDevDependencies": ["@mendable/firecrawl-js@1.25.2"]
 		},
 		{
 			"name": "image-gen",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Generate, edit, upscale, and remove backgrounds from images via Replicate AI models",
 			"files": ["tool/image-gen.ts", "tool/tests/image-gen.test.ts"],
 			"npmDevDependencies": ["replicate@1.0.1"]
 		},
 		{
 			"name": "image-search",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Search Google Images via Serper API with optional AI-generated descriptions",
 			"files": ["tool/image-search.ts", "tool/tests/image-search.test.ts"],
 			"npmDevDependencies": ["replicate@1.0.1"]
 		},
 		{
 			"name": "video-gen",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Generate videos from text/images via ByteDance Seedance 1.5 Pro on Replicate",
 			"files": ["tool/video-gen.ts", "tool/tests/video-gen.test.ts"],
 			"npmDevDependencies": ["replicate@1.0.1"]
 		},
 		{
 			"name": "presentation-gen",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Create, validate, preview, and export HTML presentation slides (1920x1080)",
 			"files": [
 				"tool/presentation-gen.ts",
@@ -354,73 +360,73 @@
 		},
 		{
 			"name": "show",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Show outputs and attachments to users — images, files, URLs, text, code, videos, audio",
 			"files": ["tool/show.ts", "tool/tests/show.test.ts"]
 		},
 		{
 			"name": "cron-triggers",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Manage scheduled cron triggers on Kortix — create, list, pause, resume, run",
 			"files": ["tool/cron-triggers.ts"]
 		},
 		{
 			"name": "woa-find",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Search the Wisdom of Agents forum for existing solutions",
 			"files": ["tool/woa-find.ts"]
 		},
 		{
 			"name": "woa-create",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Post to the Wisdom of Agents forum — new questions or replies",
 			"files": ["tool/woa-create.ts"]
 		},
 		{
 			"name": "integration-search",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Search available third-party OAuth apps for connection",
 			"files": ["tool/integration-search.ts"]
 		},
 		{
 			"name": "integration-connect",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Connect a third-party app via OAuth — returns dashboard URL for authorization",
 			"files": ["tool/integration-connect.ts"]
 		},
 		{
 			"name": "integration-list",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "List connected OAuth integrations available in the sandbox",
 			"files": ["tool/integration-list.ts"]
 		},
 		{
 			"name": "integration-actions",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "List available Pipedream actions for a connected integration app",
 			"files": ["tool/integration-actions.ts"]
 		},
 		{
 			"name": "integration-run",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Execute a Pipedream action with structured props for a connected app",
 			"files": ["tool/integration-run.ts"]
 		},
 		{
 			"name": "integration-exec",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Execute Node.js code calling authenticated third-party APIs via proxyFetch",
 			"files": ["tool/integration-exec.ts"]
 		},
 		{
 			"name": "integration-request",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Make authenticated HTTP requests to third-party APIs on behalf of the user",
 			"files": ["tool/integration-request.ts"]
 		},
 		{
 			"name": "kortix-primitives",
-			"type": "ocx:tool",
+			"type": "tool",
 			"description": "Shared utility library — environment variable resolution for Kortix sandbox",
 			"files": ["tool/lib/get-env.ts"]
 		},
@@ -431,7 +437,7 @@
 
 		{
 			"name": "kortix-memory",
-			"type": "ocx:plugin",
+			"type": "plugin",
 			"description": "Long-term memory with episodic/semantic/procedural consolidation and hybrid BM25+vector search",
 			"files": [
 				"plugin/kortix-sys/src/index.ts",
@@ -453,7 +459,7 @@
 		},
 		{
 			"name": "kortix-tunnel",
-			"type": "ocx:plugin",
+			"type": "plugin",
 			"description": "Tunnel tools for interacting with the user's local machine — filesystem, shell, screen, clipboard",
 			"files": [
 				"plugin/kortix-tunnel/index.ts",
@@ -469,7 +475,7 @@
 
 		{
 			"name": "kortix-agent",
-			"type": "ocx:agent",
+			"type": "agent",
 			"description": "Autonomous general-purpose agent — plans, explores, builds, handles all tasks directly",
 			"files": ["agent/kortix.md"]
 		},
@@ -480,7 +486,7 @@
 
 		{
 			"name": "onboarding",
-			"type": "ocx:command",
+			"type": "command",
 			"description": "First-run onboarding — researches user, builds profile, connects accounts, seeds memory",
 			"files": ["command/onboarding.md"]
 		},
@@ -491,7 +497,7 @@
 
 		{
 			"name": "sandbox",
-			"type": "ocx:bundle",
+			"type": "bundle",
 			"description": "Full Kortix sandbox experience — all skills, tools, plugins, and the default agent",
 			"files": [],
 			"dependencies": [
@@ -509,6 +515,7 @@
 				"cron-triggers",
 				"kortix-system",
 				"email",
+				"hermes-tweet",
 				"domain-research",
 				"fullstack-vite-convex",
 				"agent-browser",
@@ -522,7 +529,7 @@
 		},
 		{
 			"name": "research",
-			"type": "ocx:bundle",
+			"type": "bundle",
 			"description": "Research capabilities — deep research, academic papers, web search",
 			"files": [],
 			"dependencies": [
@@ -535,7 +542,7 @@
 		},
 		{
 			"name": "documents",
-			"type": "ocx:bundle",
+			"type": "bundle",
 			"description": "Document creation — Word, Excel, PDF, presentations, legal docs",
 			"files": [],
 			"dependencies": [
@@ -549,7 +556,7 @@
 		},
 		{
 			"name": "media",
-			"type": "ocx:bundle",
+			"type": "bundle",
 			"description": "Media generation — images, videos, logos, audio, presentations",
 			"files": [],
 			"dependencies": [
@@ -562,7 +569,7 @@
 		},
 		{
 			"name": "integrations",
-			"type": "ocx:bundle",
+			"type": "bundle",
 			"description": "Third-party OAuth integrations — search, connect, list, execute actions",
 			"files": [],
 			"dependencies": [
