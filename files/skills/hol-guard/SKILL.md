@@ -9,10 +9,10 @@ Use HOL Guard as the local safety boundary for supported agent and coding harnes
 
 ## Install
 
-Prefer an isolated `pipx` install and pin the currently verified stable release:
+Prefer an isolated `pipx` install and pin the verified stable release used by this skill:
 
 ```bash
-pipx install "hol-guard==3.0.11"
+pipx install "hol-guard==3.0.12"
 hol-guard --version
 ```
 
@@ -81,4 +81,4 @@ If `detect` does not report the runtime you intended to protect, stop and state 
 
 - Project: https://github.com/hashgraph-online/hol-guard
 - Get started: https://github.com/hashgraph-online/hol-guard/blob/main/docs/guard/get-started.md
-- Stable release used by this skill: v3.0.11
+- Stable release used by this skill: v3.0.12
