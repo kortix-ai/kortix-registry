@@ -20,10 +20,11 @@ ocx add kortix/sandbox
 | media | Images, videos, logos, audio generation | `ocx add kortix/media` |
 | integrations | Third-party OAuth integrations | `ocx add kortix/integrations` |
 
-## Skills (18)
+## Skills (19)
 
 | Name | Description | Command |
 |------|-------------|---------|
+| hol-guard | HOL Guard local safety boundary for supported agent and coding harnesses | `ocx add kortix/hol-guard` |
 | deep-research | Thorough, evidence-based research with cited reports | `ocx add kortix/deep-research` |
 | agent-browser | Browser automation — navigate, fill forms, screenshot | `ocx add kortix/agent-browser` |
 | docx | Create and manipulate Word documents | `ocx add kortix/docx` |

@@ -17,6 +17,12 @@
 		// ============================================================================
 
 		{
+			"name": "hol-guard",
+			"type": "ocx:skill",
+			"description": "Install and operate HOL Guard as a local safety boundary for supported AI-agent and coding harnesses",
+			"files": ["skills/hol-guard/SKILL.md"]
+		},
+		{
 			"name": "deep-research",
 			"type": "ocx:skill",
 			"description": "Thorough, scientific, truth-seeking research with cited reports",
